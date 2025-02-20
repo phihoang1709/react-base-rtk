@@ -15,12 +15,13 @@ A React + Vite template powered by shadcn/ui.
 - **PostCSS** - A tool for transforming CSS with JavaScript.
 - **Autoprefixer** - A PostCSS plugin to parse CSS and add vendor prefixes.
 - **shadcn/ui** - Beautifully designed components that you can copy and paste into your apps.
-- **SWR** - Api calling like React Query
+- **RTK Query** - Api calling like React Query
 - **React Router Dom** - Router navigation
 - **Zustand** - Simple state management
 - **React Icons + Lucide** - Icons
 - **Motion** - Animation
 - **React Hook Form** - Form handling
+- **Zod** - Validate
 
 ## ⚙️ Prerequisites
 
