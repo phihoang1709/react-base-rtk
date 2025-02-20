@@ -28,6 +28,20 @@ const routes = createBrowserRouter([
 
 
 function App() {
+  // useEffect(() => {
+  //   const token = localStorage.getItem('auth-token');
+
+  //   if (!token) {
+  //     loginTma({ initData: initDataRaw, timezone })
+  //       .unwrap()
+  //       .then((data) => {
+  //         console.log('Server response:', data);
+  //         localStorage.setItem('auth-token', data.data.token);
+  //       })
+  //       .catch((error) => console.error('Error:', error));
+  //   }
+  // }, [login]);
+
   return <RouterProvider router={routes} />;
 }
 

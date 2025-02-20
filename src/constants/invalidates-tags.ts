@@ -1,3 +1,4 @@
-export const invalidatesTags = {
-    AUTH: 'Auth'
+export enum InvalidatesEnum {
+    AUTH = 'Auth',
+    POST = 'Post',
 }

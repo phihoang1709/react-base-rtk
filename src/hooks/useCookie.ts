@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from "react";
 
 interface UseCookieOptions {
     initialValue: string;
@@ -16,7 +16,7 @@ interface CookieOptions {
 }
 
 export const useCookie = ({ initialValue, key, options = {} }: UseCookieOptions): [string, (value: string, options?: CookieOptions) => void, () => void] => {
-    const [cookieValue, setCookieValue] = React.useState<string>(() => {
+    const [cookieValue, setCookieValue] = useState<string>(() => {
         const cookie = document.cookie.split('; ').find(row => row.startsWith(`${key}=`));
         return cookie ? decodeURIComponent(cookie.split('=')[1]) : initialValue;
     });
