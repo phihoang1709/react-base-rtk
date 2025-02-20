@@ -16,8 +16,8 @@ A React + Vite template powered by shadcn/ui.
 - **Autoprefixer** - A PostCSS plugin to parse CSS and add vendor prefixes.
 - **shadcn/ui** - Beautifully designed components that you can copy and paste into your apps.
 - **RTK Query** - Api calling like React Query
+- **Redux Toolkit** - State management
 - **React Router Dom** - Router navigation
-- **Zustand** - Simple state management
 - **React Icons + Lucide** - Icons
 - **Motion** - Animation
 - **React Hook Form** - Form handling
