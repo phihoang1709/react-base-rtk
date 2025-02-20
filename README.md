@@ -37,13 +37,13 @@ Follow these steps to get started with the react-vite-ui template:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/dan5py/react-vite-ui.git
+   git clone https://github.com/phihoang1709/react-base-rtk.git
    ```
 
 2. Navigate to the project directory:
 
    ```bash
-   cd react-vite-ui
+   cd react-base-rtk
    ```
 
 3. Install the dependencies:
@@ -76,11 +76,22 @@ react-vite-ui/
   ├── src/               # Application source code
   │   ├── components/    # React components
   │   │   └── ui/        # shadc/ui components
-  │   ├── styles/        # CSS stylesheets
-  │   ├── lib/           # Utility functions
+  |   ├── configs/       
+  │   ├── constants/        
+  |   ├── enums/        
+  │   ├── hooks/        
+  |   ├── interfaces/       
+  │   ├── layout/        
+  │   ├── lib/          
+  │   ├── pages/        
+  |   ├── providers/        
+  │   ├── services/        
+  |   ├── stores/       
+  │   ├── styles/        
+  │   ├── utils/           
   │   ├── App.tsx        # Application entry point
   │   └── index.tsx      # Main rendering file
-  ├── eslint.config.js     # ESLint configuration
+  ├── eslint.config.js    # ESLint configuration
   ├── index.html         # HTML entry point
   ├── postcss.config.js  # PostCSS configuration
   ├── tailwind.config.ts # Tailwind CSS configuration
