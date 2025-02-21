@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
+@import "tailwindcss/preflight"
 @tailwind utilities;
+@import "tailwindcss";
 
 @layer base {
   * {
@@ -90,7 +90,7 @@
     --chart-5: 340 75% 55%;
   }
 }
-
+/* 
 @layer base {
   * {
     @apply border-border;
@@ -98,32 +98,6 @@
   body {
     @apply bg-background text-foreground;
   }
-}
+} */
 
-html {
-  overflow: hidden;
-}
-
-
-body {
-  font-family: "Montserrat", serif;
-  font-optical-sizing: auto;
-  font-weight: normal; 
-  font-style: normal;
-  text-decoration: none; 
-}
-
-a, p, span, h1, h2, h3, h4, h5, h6 {
-  text-decoration: none; 
-}
-
-* {
-  scrollbar-width: none; 
-  -ms-overflow-style: none; 
-  text-decoration: none !important;
-}
-
-::-webkit-scrollbar {
-  display: none; 
-}
 
