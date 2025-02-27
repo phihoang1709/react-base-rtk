@@ -2,8 +2,11 @@ import tailwindAnimate from "tailwindcss-animate";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  darkMode: ["class"],
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: "class",
+  content: [
+    "./index.html", 
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./.storybook/**/*.{js,jsx,ts,tsx}"],
   theme: {
     container: {
       center: true,
@@ -84,12 +87,12 @@ const config: Config = {
         "accordion-up": "accordion-up 0.2s ease-out",
         'spin-slow': 'spin 10s linear infinite',
       },
-      backgroundImage: {
-        'custom-bg': "url('@/assets/images/bg_purple.svg')",
-        'loading-bg': "url('@/assets/images/bg_loading.svg')",
-        'gold-gradient': 'linear-gradient(45deg, #fed64a, #fef14e, #ffdf6c, #fcff67, #fed545, #feca45, #feed44)',
-        'avatar1-bg': "url('@/assets/icons/avatars/avt1.png')"
-      },
+      // backgroundImage: {
+      //   'custom-bg': "url('@/assets/images/bg_purple.svg')",
+      //   'loading-bg': "url('@/assets/images/bg_loading.svg')",
+      //   'gold-gradient': 'linear-gradient(45deg, #fed64a, #fef14e, #ffdf6c, #fcff67, #fed545, #feca45, #feed44)',
+      //   'avatar1-bg': "url('@/assets/icons/avatars/avt1.png')"
+      // },
 
     },
   },

@@ -1,7 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { baseUrl } from "@/configs/config";
 import { InvalidatesEnum } from "@/constants/invalidates-tags";
-import { getLocalStorageValue } from "@/hooks/useStorage";
 
 const reducerPath = "authApi";
 const endpoint = 'auth';
@@ -21,6 +20,9 @@ export interface LoginRequest {
   password: string;
 }
 
+// Custom hook for managing auth token
+
+
 export const authApi = createApi({
   reducerPath,
   tagTypes: [InvalidatesEnum.AUTH],
@@ -28,7 +30,8 @@ export const authApi = createApi({
     baseUrl,
     prepareHeaders: (headers, { endpoint }) => {
       if (endpoint === "getMe") {
-        const token = getLocalStorageValue('auth-token', null);
+        const storedToken = localStorage.getItem('auth-token');
+        const token = storedToken ? JSON.parse(storedToken) : null;
         if (token) {
           headers.set("Authorization", `Bearer ${token}`);
         }
@@ -39,14 +42,14 @@ export const authApi = createApi({
   endpoints: (builder) => ({
     login: builder.mutation<UserResponse, LoginRequest>({
       query: (body) => ({
-        url: `${endpoint}/login-tma`,
+        url: `${endpoint}/login`,
         method: "POST",
         body,
       }),
       async onQueryStarted(_arg, { queryFulfilled }) {
         try {
           const { data } = await queryFulfilled;
-          window.localStorage.setItem("auth-token", JSON.stringify(data.token));
+          localStorage.setItem("auth-token", JSON.stringify(data.token));
         } catch (error) {
           console.error("Login error:", error);
         }
@@ -54,7 +57,7 @@ export const authApi = createApi({
     }),
     logout: builder.mutation<void, void>({
       queryFn: () => {
-        window.localStorage.removeItem("auth-token");
+        localStorage.removeItem("auth-token");
         return { data: undefined };
       },
       invalidatesTags: [InvalidatesEnum.AUTH],

@@ -1,26 +1,31 @@
-import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, 
+  // Navigate, 
+  RouterProvider } from 'react-router-dom';
 import routesPath from '@/constants/routes';
 import ErrorPage from "@/pages/ErrorPage";
-
+import Home from './pages/Home';
+import MainLayout from './layouts/MainLayout';
+import ImageEditor from './pages/ImageEditor';
 const {
-  ROOT,
+  ROOT, 
+  // LOGIN
  } = routesPath;
 
-const PrivateRoute = ({ children }: {children: React.ReactNode}) => {
-  const token = localStorage.getItem('auth-token');
-  if (!token) {
-    return <Navigate to="/login" replace />;
-  }
-  return children;
-};
+// const PrivateRoute = ({ children }: {children: React.ReactNode}) => {
+//   const token = localStorage.getItem('auth-token');
+//   if (!token) {
+//     return <Navigate to={LOGIN} replace />;
+//   }
+//   return children;
+// };
 
 const routes = createBrowserRouter([
   {
     path: ROOT,
-    element: <PrivateRoute><div></div></PrivateRoute> ,
+    element: <MainLayout/> ,
     children: [
-      { index: true, element: <div></div> },
-      // { index: "/some", element: <div></div> },
+      { index: true, element: <Home/> },
+      { path: "/edit", element: <ImageEditor/> },
     ],
   },
   { path: '*', element: <ErrorPage /> },
@@ -28,20 +33,6 @@ const routes = createBrowserRouter([
 
 
 function App() {
-  // useEffect(() => {
-  //   const token = localStorage.getItem('auth-token');
-
-  //   if (!token) {
-  //     loginTma({ initData: initDataRaw, timezone })
-  //       .unwrap()
-  //       .then((data) => {
-  //         console.log('Server response:', data);
-  //         localStorage.setItem('auth-token', data.data.token);
-  //       })
-  //       .catch((error) => console.error('Error:', error));
-  //   }
-  // }, [login]);
-
   return <RouterProvider router={routes} />;
 }
 

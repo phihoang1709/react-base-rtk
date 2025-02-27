@@ -5,6 +5,8 @@ import { authApi } from '@/services/auth';
 
 import postsReducer, { namespace as postsNamespace } from './posts/postsSlice';
 import authReducer ,{ namespace as authNamespace } from './auth/authSlice';
+import themeReducer, { namespace as themeNamespace } from './theme/themeSlice';
+
 
 export const listenerMiddleware = createListenerMiddleware({
   onError: () => console.error('An error listener middleware occurred'),
@@ -14,6 +16,7 @@ export const listenerMiddleware = createListenerMiddleware({
 const reducer = {
   [postsNamespace]: postsReducer,
   [authNamespace]: authReducer,
+  [themeNamespace]: themeReducer,
   
   [postsApi.reducerPath]: postsApi.reducer,
   [authApi.reducerPath]: authApi.reducer,

@@ -22,6 +22,7 @@ A React + Vite template powered by shadcn/ui.
 - **Motion** - Animation
 - **React Hook Form** - Form handling
 - **Zod** - Validate
+- **React Use** - Custom Hooks
 
 ## ⚙️ Prerequisites
 
