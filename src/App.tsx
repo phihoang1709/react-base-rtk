@@ -1,13 +1,15 @@
 import { createBrowserRouter, 
+
   // Navigate, 
   RouterProvider } from 'react-router-dom';
 import routesPath from '@/constants/routes';
 import ErrorPage from "@/pages/ErrorPage";
-import Home from './pages/Home';
 import MainLayout from './layouts/MainLayout';
-import ImageEditor from './pages/ImageEditor';
+import Login from './pages/Login';
+import Register from './pages/Register';
 const {
-  ROOT, 
+  // ROOT, 
+  DASHBOARD
   // LOGIN
  } = routesPath;
 
@@ -20,12 +22,26 @@ const {
 // };
 
 const routes = createBrowserRouter([
+  // {
+  //   path: ROOT,
+  //   element: <MainLayout/> ,
+  //   children: [
+  //     { index: true, element: <Home/> },
+  //     { path: "/register", element: <Register /> },
+  //     { path: "/login", element: <Login /> },
+      
+
+  //   ],
+  // },
   {
-    path: ROOT,
+    path: DASHBOARD,
     element: <MainLayout/> ,
     children: [
-      { index: true, element: <Home/> },
-      { path: "/edit", element: <ImageEditor/> },
+      { index: true, element: <Register/> },
+      { path: "/register", element: <Register /> },
+      { path: "/login", element: <Login /> },
+      
+
     ],
   },
   { path: '*', element: <ErrorPage /> },

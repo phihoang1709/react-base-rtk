@@ -1,7 +1,10 @@
 import { Outlet } from "react-router-dom"
 const MainLayout = () => {
   return (
-    <><Outlet/></>
+    <div>
+      <h1 className="text-2xl font-bold">Hello, Theme Switcher!</h1>
+      <Outlet/>
+      </div>
   )
 }
 
